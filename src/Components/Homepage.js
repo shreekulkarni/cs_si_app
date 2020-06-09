@@ -1,47 +1,89 @@
 import React from 'react';
-import {Text, View, StyleSheet} from "react-native";
+import {
+    Text,
+    View,
+    StyleSheet,
+    Dimensions,
+    TouchableHighlight,
+    Platform
+} from "react-native";
 
 class Homepage extends React.Component {
+    scheduleHandler = () => {
+        //TODO: navigate to the schedule page
+    }
+
+    contactHandler = () => {
+        //TODO: navigate to the contact page
+    }
+
+    slideHandler = () => {
+        //TODO: navigate to the slides page
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>CS 180 SI</Text>
+                <View style={Platform.OS === 'web' ? styles.menuWeb : styles.menuMobile}>
+                    <TouchableHighlight
+                        onPress={this.scheduleHandler()}
+                        style={styles.button}>
+                        <Text style={styles.buttonText}>Schedule</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={this.contactHandler()}
+                        style={styles.button}>
+                        <Text style={styles.buttonText}>Contact</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={this.scheduleHandler()}
+                        style={styles.button}>
+                        <Text style={styles.buttonText}>Slides</Text>
+                    </TouchableHighlight>
+                </View>
             </View>
         );
     };
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#282c34',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    width: 300,
-    height: 300,
-  },
-  title: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  text: {
-    color: '#fff',
-  },
-  button: {
-    borderRadius: 3,
-    padding: 20,
-    marginVertical: 10,
-    marginTop: 10,
-    backgroundColor: '#1B95E0',
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#282c34',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    title: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: Dimensions.get('window').height / 20,
+    },
+    button: {
+        borderRadius: 20,
+        // marginVertical: 20,
+        padding: Platform.OS === 'web' ? Dimensions.get('window').width / 40 : Dimensions.get('window').height / 40,
+        // marginTop: Dimensions.get('window').height / 20,
+    },
+    buttonText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: Dimensions.get('window').height / 40,
+    },
+    menuWeb: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#282c34',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    menuMobile: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#282c34',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });
 
 export default Homepage;
