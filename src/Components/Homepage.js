@@ -11,10 +11,9 @@ import {
 import {Button} from "react-native-web";
 
 class Homepage extends React.Component {
-    scheduleHandler = () => {
-        //TODO: navigate to the schedule page
-        // this.props.navigation.navigate('Schedule');
-    };
+    constructor(props) {
+        super(props);
+    }
 
     contactHandler = () => {
         //TODO: navigate to the contact page
@@ -37,12 +36,12 @@ class Homepage extends React.Component {
                         <Text style={styles.buttonText}>Schedule</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
-                        onPress={this.contactHandler()}
+                        onPress={() => this.props.navigation.navigate('Contact')}
                         style={styles.button}>
                         <Text style={styles.buttonText}>Contact</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
-                        onPress={this.scheduleHandler()}
+                        onPress={() => this.props.navigation.navigate('Slides')}
                         style={styles.button}>
                         <Text style={styles.buttonText}>Slides</Text>
                     </TouchableHighlight>
