@@ -24,7 +24,9 @@ class Homepage extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>CS 180 SI</Text>
+                <View style={styles.header}>
+                    <Text style={styles.title}>CS 180 SI</Text>
+                </View>
                 <View style={Platform.OS === 'web' ? styles.menuWeb : styles.menuMobile}>
                     <TouchableHighlight
                         onPress={this.scheduleHandler()}
@@ -54,6 +56,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    header: {
+        padding: Dimensions.get('window').height / 40,
+    },
     title: {
         color: '#fff',
         fontWeight: 'bold',
@@ -67,18 +72,15 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#fff',
-        fontWeight: 'bold',
         fontSize: Dimensions.get('window').height / 40,
     },
     menuWeb: {
-        flex: 1,
         flexDirection: 'row',
         backgroundColor: '#282c34',
         alignItems: 'center',
         justifyContent: 'center'
     },
     menuMobile: {
-        flex: 1,
         flexDirection: 'column',
         backgroundColor: '#282c34',
         alignItems: 'center',
