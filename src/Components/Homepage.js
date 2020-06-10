@@ -5,13 +5,16 @@ import {
     StyleSheet,
     Dimensions,
     TouchableHighlight,
+    TouchableOpacity,
     Platform
 } from "react-native";
+import {Button} from "react-native-web";
 
 class Homepage extends React.Component {
     scheduleHandler = () => {
         //TODO: navigate to the schedule page
-    }
+        // this.props.navigation.navigate('Schedule');
+    };
 
     contactHandler = () => {
         //TODO: navigate to the contact page
@@ -29,7 +32,7 @@ class Homepage extends React.Component {
                 </View>
                 <View style={Platform.OS === 'web' ? styles.menuWeb : styles.menuMobile}>
                     <TouchableHighlight
-                        onPress={this.scheduleHandler()}
+                        onPress={() => this.props.navigation.navigate('Schedule')}
                         style={styles.button}>
                         <Text style={styles.buttonText}>Schedule</Text>
                     </TouchableHighlight>

@@ -94,13 +94,17 @@
 
 import React from "react";
 import Homepage from './Components/Homepage';
+import Navigator from './Routes/HomeStack';
+import {Platform} from "react-native-web";
 
 
 class App extends React.Component{
   render() {
-    return (
-        <Homepage></Homepage>
-    );
+    // if  (Platform.OS !== 'web') {
+      return (
+        <Navigator/>
+      );
+    // }
   }
 }
 
