@@ -1,0 +1,10 @@
+            <div>
+                <h1 style={header}>CS 18000: Object Oriented Programming in Java</h1>
+                <h1 style={header2}>Supplemental Instruction</h1>
+                <nav>
+                    <a href={'./schedule'}>Schedule</a>
+                    <a href={'./contact'}>Contact</a>
+                </nav>
+
+            </div>
+
