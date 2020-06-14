@@ -2,9 +2,15 @@ import React from 'react';
 import './App.css';
 import Homepage from './Components/homepage';
 
+import {Router} from 'react-router-dom';
+import history from './Services/history';
+import Routes from './Routes';
+
 function App() {
   return (
-       <Homepage/>
+    <Router history={history}>
+      <Routes/>
+    </Router>
   );
 }
 
