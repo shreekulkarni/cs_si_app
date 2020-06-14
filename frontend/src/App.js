@@ -4,12 +4,17 @@ import './App.css';
 import {Router} from 'react-router-dom';
 import history from './Services/history';
 import Routes from './Routes';
+import Navigation from './Components/Navbar';
 
 function App() {
   return (
-    <Router history={history}>
-      <Routes />
-    </Router>
+      <div>
+          <Router history={history}>
+              {/*<Navigation/>*/}
+              <Routes />
+          </Router>
+      </div>
+
   );
 }
 
