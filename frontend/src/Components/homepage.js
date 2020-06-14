@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
 import {NavigationHeaderBar} from './navHeader';
-import {Container, Row, Col} from 'reactstrap';
 
 class homepage extends React.Component {
     render() {
@@ -12,20 +11,6 @@ class homepage extends React.Component {
                 </Router>
         );
     };
-}
-
-const divpage = {
-    flex: 1,
-    flexDirection: "column",
-    alignitems: 'center',
-    justifyContent: 'center'
-}
-
-const navbarDiv = {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center'
 }
 
 const header = {

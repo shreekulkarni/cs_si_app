@@ -1,5 +1,5 @@
 import {Switch, Route} from 'react-router-dom';
-
+import React from 'react';
 import Homepage from '../Components/homepage';
 import Schedule from '../Components/schedule';
 
