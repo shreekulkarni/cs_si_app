@@ -1,6 +1,4 @@
 import React from "react";
-import history from "../../Services/history";
-import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 export default function Homepage() {
@@ -9,8 +7,10 @@ export default function Homepage() {
             <div>
                 <h1>CS 180 SI</h1>
             </div>
-            <div>
-                <Link to={'/schedule'}>Schedule</Link>
+            <div style={menuStyle}>
+                <Link to={'/schedule'} style={navli}>Schedule</Link>
+                <Link to={'/'} style={navli}>Slides</Link>
+                <Link to={'/'} style={navli}>Contact</Link>
             </div>
         </div>
     );
@@ -22,5 +22,18 @@ const divStyle = {
     alignItems: "center",
     justifyContent: "center",
     position: 'absolute', left: '50%', top: '50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+}
+
+const menuStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+}
+
+const navli = {
+    display: "block",
+    padding: "8px 15px",
+    color: "green"
 }
