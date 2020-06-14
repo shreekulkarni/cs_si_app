@@ -8,7 +8,7 @@ import Routes from './Routes';
 function App() {
   return (
     <Router history={history}>
-      <Routes/>
+      <Routes />
     </Router>
   );
 }
