@@ -8,3 +8,6 @@
 
             </div>
 
+                    <div style={navbarDiv}>
+                        <h1 style={header}>CS 180</h1>
+                    </div>

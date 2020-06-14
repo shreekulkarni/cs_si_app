@@ -1,9 +1,11 @@
 import React from 'react';
+import {NavigationHeaderBar} from "./navHeader"
 
 class schedule extends React.Component {
     render() {
         return (
             <div>
+                <NavigationHeaderBar/>
                 <h1 style={header}>schedule</h1>
             </div>
         );
