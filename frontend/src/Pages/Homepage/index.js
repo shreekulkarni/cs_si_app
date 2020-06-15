@@ -1,20 +1,31 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import Axios from 'axios';
 
-export default function Homepage() {
-    return (
-        <div style={divStyle}>
-            <div>
-                <h1>CS 180 SI</h1>
+class Homepage extends React.Component {
+    doit = () => {
+        Axios.get('http://localhost:3002/click').then((res) => console.log(res.data))
+    }
+
+    render() {
+        return (
+
+            <div style={divStyle}>
+                <div>
+                    <h1>CS 180 SI</h1>
+                </div>
+                <div style={menuStyle}>
+                    <Link to={'/schedule'} style={navli}>Schedule</Link>
+                    <Link to={'/'} style={navli}>Slides</Link>
+                </div>
+                <button onClick={this.doit}>Click</button>
             </div>
-            <div style={menuStyle}>
-                <Link to={'/schedule'} style={navli}>Schedule</Link>
-                <Link to={'/'} style={navli}>Slides</Link>
-                <Link to={'/'} style={navli}>Contact</Link>
-            </div>
-        </div>
-    );
+        );
+    }
 }
+
+export default Homepage;
+
 
 const divStyle = {
     display: "flex",

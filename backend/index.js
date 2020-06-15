@@ -2,23 +2,21 @@
 
 const express = require('express');
 const app = express();
+var cors = require('cors');
 
 const path = require('path');
 
-console.log("Serving at port 3000");
+console.log("Serving at port 3002");
 
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(cors());
 
-app.listen(3000)
-
-app.get('./', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+app.get('/', function (req, res) {
+    res.send("Server running");
 })
 
-app.get('/schedule', function (req, res) {
-    res.send("schedule reached")
+app.get('/click', function (req, res) {
+    res.send("clicked");
 })
 
-app.get('/contact', function (req, res) {
-    res.send("contact reached")
-})
+app.listen(3002)
