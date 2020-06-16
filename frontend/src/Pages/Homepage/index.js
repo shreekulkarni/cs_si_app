@@ -16,6 +16,7 @@ class Homepage extends React.Component {
                 </div>
                 <div style={menuStyle}>
                     <Link to={'/schedule'} style={navli}>Schedule</Link>
+                    <Link to={'/contact'} style={navli}>Contact</Link>
                     <Link to={'/'} style={navli}>Slides</Link>
                 </div>
                 <button onClick={this.doit}>Click</button>
